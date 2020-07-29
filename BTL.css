@@ -1,0 +1,33 @@
+.top{
+	display:flex;
+	bottom: center;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#navbarSupportedConten{
+	display: block;
+}
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: rgb(108, 108, 211);
+	z-index: 1;
+	list-style: none;
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+
+*.dropdown-content a{
+	color: rgb(238, 238, 238);
+	padding: 10px 10px;
+	text-decoration: none;
+}*
