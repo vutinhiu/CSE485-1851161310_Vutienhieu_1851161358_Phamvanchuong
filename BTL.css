@@ -1,3 +1,10 @@
+.mb-4{
+	width:1080px;
+	padding-left: 10px;
+	padding-right: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .top{
 	display:flex;
 	bottom: center;
@@ -6,7 +13,9 @@
 	margin: 0;
 	padding: 0;
 }
-
+.navbar{
+	background-color: #4855f7;
+}
 #navbarSupportedConten{
 	display: block;
 }
@@ -17,7 +26,7 @@
 .dropdown-content{
 	display: none;
 	position: absolute;
-	background-color: rgb(108, 108, 211);
+	background-color: #337ab7;
 	z-index: 1;
 	list-style: none;
 }
@@ -25,9 +34,56 @@
 .dropdown:hover .dropdown-content{
 	display: block;
 }
-
+.collapse{
+	
+    left: -100%;
+    margin: 0;
+    padding: 20px 8px;
+    top: 45px;
+    transition: left 0.5s;
+    width: 100%;
+    z-index: 20;
+}
 *.dropdown-content a{
 	color: rgb(238, 238, 238);
 	padding: 10px 10px;
 	text-decoration: none;
 }*
+.post-details{
+	display: flex;
+}
+
+.title{
+	background-color: #003478;
+	
+}
+.title h3{
+	color: white;
+	font-size: 20px;
+}
+.post-title a{
+	font-weight: inherit;
+	font-size: 18px;
+}
+.list-1{
+	display: flex;
+}
+.list-data--2 a{
+	font-size: 18px;
+}
+.list-2{
+	display: flex;
+}
+.container1{
+	background-color: #0196da;
+	color: white;
+	display: flex;
+	padding: 20px 80px 20px 80px;
+	font-size: 18px;
+}
+.entry-thumb a{
+	font-size: 18px;
+}
+.img{
+	display: flex;
+}
