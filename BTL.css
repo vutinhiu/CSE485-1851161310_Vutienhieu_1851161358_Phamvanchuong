@@ -166,7 +166,13 @@
 }
 .news-entry .entry-title h3>a {
     color: #fff;
+    display: block;
 }
+.news-entry{
+    height: 180px;
+    width: 120px;
+}
+
 
 .mapguide, .content-box .board3, .post-details .post-thumb, .wrap-news .box-news, .list-data--2 li {
     float: left;
@@ -176,6 +182,9 @@
     font-weight: 500;
     margin-bottom: 5px;
 }
+.entry-title h3 a{
+    display: inline-block;
+}
 .wrap-news .related-news {
 	width: 28.5%;
     float: right;
@@ -184,6 +193,9 @@
 .list-inline, .list-data--1, .list-data--2 {
     padding-left: 0;
     list-style: none;
+}
+.box-news{
+    display: flex;
 }
 .list-data--1 {
     margin: 0;
