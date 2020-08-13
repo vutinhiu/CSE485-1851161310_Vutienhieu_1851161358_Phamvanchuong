@@ -57,6 +57,7 @@
     margin-top: 0;
     line-height: 1.4;
 }
+
 .top{
 	display:flex;
 	bottom: center;
@@ -205,10 +206,6 @@
     padding-bottom: 6px;
     color: white;
 }
-
-
-
-
 
 .title{
 	background-color: #003478;
