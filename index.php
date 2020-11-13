@@ -16,10 +16,45 @@
 </head>
 
 <body>
+    
     <div class="container">
-       <?php
-       include("header.php");
-       ?>
+       
+       <?php require_once("includes/connect.php"); ?>
+<?php include("includes/header.php" );?>
+<?php
+	// Lấy 16 bài viết mới nhất đã được phép public ra ngoài từ bảng posts
+	$sql = "select * from posts where is_public = 1 order by createdate desc limit 16";
+	// Thực hiện truy vấn data thông qua hàm mysqli_query
+	$query = mysqli_query($conn,$sql);
+?>
+			<div class="innertube">
+				<table width="100%" border="1">
+					<tr>
+					<?php
+						// Khởi tạo biến đếm $i = 0
+						$i = 0;
+						// Lặp dữ liệu lấy data từ cơ sở dữ liệu
+						while ( $data = mysqli_fetch_array($query) ) {
+							// Nếu biến đếm $i = 4, tức là vòng lặp chạy tới bài viết thứ tư thì ta thực hiện xuống hàng cho bài viết kế tiếp
+							// Vì mỗi dòng hiển thị, ta chỉ hiển thị 4 bài viết
+							if ($i == 4) {
+								echo "</tr>";
+								$i = 0;
+							}
+					?>
+						<td >
+							<b><?php echo $data["title"];// In ra title bài viết ?></b>
+							<p><?php echo substr($data["content"], 0, 100)." ...";// In ra nội dung bài viết lấy chỉ 100 ký tự ?></p>
+							<a href="display.php?id=<?php echo $data["id"]; // Tạo liên kết đến trang display.php và truyền vào id bài viết ?>"> Xem thêm</a>
+						</td>
+					
+					<?php
+							$i++;
+						}
+					?>
+				</table>	
+			</div>
+		</main>
         </nav>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -27,16 +62,16 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/banner-3thumb.jpg" class="d-block w-100" alt="http://fem.tlu.edu.vn/">
+                    <img src="img/banner-3thumb.jpg" class="d-block w-100" alt="index.php">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/banner-2thumb.jpg" class="d-block w-100" alt="http://fem.tlu.edu.vn/.">
+                    <img src="img/banner-2thumb.jpg" class="d-block w-100" alt="index.php">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/banner-6thumb.jpg" class="d-block w-100" alt="http://fem.tlu.edu.vn/">
+                    <img src="img/banner-6thumb.jpg" class="d-block w-100" alt="index.php">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/banner-4thumb.jpg" class="d-block w-100" alt="http://fem.tlu.edu.vn/">
+                    <img src="img/banner-4thumb.jpg" class="d-block w-100" alt="index.php">
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1139,129 +1174,7 @@
 
             </div>
         </div>
-        <footer class="footer">
-            <div class="footer__top">
-                <div class="container">
-                    <span id="dnn_dnnCopyright_lblCopyright" class="SkinObject">&copy; 2020 - Khoa Kinh tế và Quản
-                        lý - Đại học Thủy Lợi</span>
-    
-                </div>
-            </div>
-            <div class="footer__bot">
-                <div class="container">
-                    <div class="row dnnpane">
-    
-                        <div id="dnn_Footer_50_1" class="col-md-6 spacingTop">
-                            <div class="DnnModule DnnModule-DNN_HTML DnnModule-432"><a name="432"></a>
-                                <div class="DNNContainer_noTitle">
-                                    <div id="dnn_ctr432_ContentPane">
-                                        <!-- Start_Module_432 -->
-                                        <div id="dnn_ctr432_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
-                                            <div id="dnn_ctr432_HtmlModule_lblContent" class="Normal">
-                                                <div class="box-bottom">
-                                                    <div class="mapguide"><a href="#"><img alt="Image"
-                                                                src="img/img-01.png" /></a>
-                                                        <p>Bản đồ chỉ dẫn trường đại học</p>
-                                                    </div>
-    
-                                                    <div class="text-bot">
-                                                        <div class="text-copyright">Địa chỉ: P.206-207&nbsp;A5, Đại
-                                                            học Thủy lợi, 175 Tây Sơn, Đống Đa, Hà Nội<br />
-                                                            Điện thoại: (04) 3852.2028<br />
-                                                            Email: <a class="ui-link-white"
-                                                                href="#">KhoaK@tlu.edu.vn</a></div>
-                                                        <div>
-                                                            <script
-                                                                id="_wau9oo">var _wau = _wau || []; _wau.push(["dynamic", "vthlqzot3c", "9oo", "3c78d8ffffff", "small"]);</script>
-                                                            <script async src="//waust.at/d.js"></script>
-                                                        </div>
-                                                    </div>
-                                                </div>
-    
-                                            </div>
-    
-                                        </div><!-- End_Module_432 -->
-                                    </div>
-                                    <div class="clear"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="dnn_Footer_25_1" class="col-md-3 spacingTop">
-                            <div class="DnnModule DnnModule-CMSView DnnModule-867"><a name="867"></a>
-                                <div id="dnn_ctr867_ContentPane">
-                                    <!-- Start_Module_867 -->
-                                    <div id="dnn_ctr867_ModuleContent" class="DNNModuleContent ModCMSViewC">
-                                        <span id="dnn_ctr867_ViewCMSView_lblInform"></span>
-    
-    
-                                        <table>
-                                            <tr>
-                                                <td>
-                                                    <div style="color:#fff">Số người đang online : <span
-                                                            class="hit-count">26</span></div>
-    
-    
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="padding-left:20px">
-                                                    <div style="color:#fff">Lượt truy cập : <span
-                                                            class="hit-count">1108460</span></div>
-                                                </td>
-    
-                                            </tr>
-                                        </table>
-    
-    
-    
-                                    </div><!-- End_Module_867 -->
-                                </div>
-                            </div>
-                            <div class="DnnModule DnnModule-DNN_HTML DnnModule-868"><a name="868"></a>
-                                <div id="dnn_ctr868_ContentPane">
-                                    <!-- Start_Module_868 -->
-                                    <div id="dnn_ctr868_ModuleContent" class="DNNModuleContent ModDNNHTMLC">
-                                        <div id="dnn_ctr868_HtmlModule_lblContent" class="Normal">
-    
-                                        </div>
-    
-                                    </div><!-- End_Module_868 -->
-                                </div>
-                            </div>
-                        </div>
-                        <div id="dnn_Footer_25_2" class="col-md-3 spacingTop">
-                            <div class="DnnModule DnnModule-CMSView DnnModule-816"><a name="816"></a>
-                                <div id="dnn_ctr816_ContentPane">
-                                    <!-- Start_Module_816 -->
-                                    <div id="dnn_ctr816_ModuleContent" class="DNNModuleContent ModCMSViewC">
-                                        <span id="dnn_ctr816_ViewCMSView_lblInform"></span>
-    
-                                        <div id="fb-root"></div>
-                                        <script>(function (d, s, id) {
-                                                var js, fjs = d.getElementsByTagName(s)[0];
-                                                if (d.getElementById(id)) return;
-                                                js = d.createElement(s); js.id = id;
-                                                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-                                                fjs.parentNode.insertBefore(js, fjs);
-                                            }(document, 'script', 'facebook-jssdk'));</script>
-                                        <div style="width: 285px;text-align:center">
-                                            <!-- Page plugin's width will be 500px -->
-                                            <div class="fb-page"
-                                                data-href="https://www.facebook.com/khoaKTvaQLtruongDHTL/"
-                                                data-width="285"></div>
-                                        </div>
-    
-                                    </div><!-- End_Module_816 -->
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-    
-                </div>
-            </div>
-        </footer>
-        
+        <?php include"includes/footer.php"?>
     </div>
 
     </div>

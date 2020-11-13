@@ -5,6 +5,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 .mb-4 h3{
 	font-size: 18px;
 }
@@ -320,4 +321,6 @@ element.style {
     margin: 0px 0px 0px 55px;
     color: rgb(255, 255, 255);
 }
-
+.button1{
+    background-color: white;
+}

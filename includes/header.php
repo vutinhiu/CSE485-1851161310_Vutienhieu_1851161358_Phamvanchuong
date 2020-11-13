@@ -13,9 +13,9 @@
       <div class="contanier">
            <div class="top">
             <div class="top__left">
-                <a href="http://fem.tlu.edu.vn/" class="">
+                <a href="index.php" class="">
                     <img src="img/logo (1).png" alt="">
-                    <img src="img/slg.png" alt="http://fem.tlu.edu.vn/">
+                    <img src="img/slg.png" alt="index.php">
                 </a>
             </div>
             <div class="top-right">
@@ -24,14 +24,14 @@
                     <li>
                         <div class="loginGroup">
                             <a title="Login" class="LoginLink" rel="nofollow"
-                                href="login.php"> Login
+                                href="login.php"> Login</a>
                         
                         </div>
                         <div class="registerGroup">
                             <ul class="buttonGroup">
                                 <li class="userDisplayName">
                                     <a title="Register"
-                                        href="sadregister.php">Register</a>
+                                        href="register.php">Register</a>
 
                                 </li>
 
